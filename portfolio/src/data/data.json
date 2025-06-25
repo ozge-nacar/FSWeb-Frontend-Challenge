@@ -1,0 +1,125 @@
+{
+  "header": {
+    "name": "almila",
+    "title": "I am a Frontend",
+    "title2": "Developer...",
+    "description": "...who likes to craft solid and scalable frontend products with great user experiences.",
+    "github": "https://github.com",
+    "linkedin": "https://linkedin.com",
+    "githubIcon": "/assets/header/github.png",
+    "linkedinIcon": "/assets/header/linkedin.png"
+  },
+
+  "skillsTitle": "Skills",
+
+  "skills": [
+    {
+      "id": 1,
+      "title": "JAVASCRIPT",
+      "icon": "/assets/icons/javascript.png",
+      "alt": "javascript-icon"
+    },
+    {
+      "id": 2,
+      "title": "REACT",
+      "icon": "/assets/icons/react.png",
+      "alt": "react-icon"
+    },
+    {
+      "id": 3,
+      "title": "REDUX",
+      "icon": "/assets/icons/redux.png",
+      "alt": "redux-icon"
+    },
+    {
+      "id": 4,
+      "title": "NODE",
+      "icon": "/assets/icons/node.png",
+      "alt": "node-icon"
+    },
+    {
+      "id": 5,
+      "title": "VS CODE",
+      "icon": "/assets/icons/vscode.png",
+      "alt": "vscode-icon"
+    },
+    {
+      "id": 6,
+      "title": "FIGMA",
+      "icon": "/assets/icons/figma.png",
+      "alt": "figma-icon"
+    }
+  ],
+  "profile": {
+    "title": "Profile",
+    "basicInfoTitle": "Basic Information",
+    "birthDate": "24.03.1996",
+    "city": "Ankara",
+    "education": "Hacettepe Üniv. Biyoloji Lisans, 2016",
+    "preferredRole": "Frontend, UI",
+    "image": "/assets/profile/profile.png",
+    "aboutTitle": "About Me",
+    "aboutText": [
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam aut, odit laborum aliquam voluptatum nisi mollitia.",
+      "Minima accusamus ratione soluta aperiam sit voluptate? Dicta quod deserunt quam temporibus cumque magnam!"
+    ]
+  },
+
+  "contact": {
+    "title": "Send me a message!",
+    "description": "Got a question or proposal, or just want",
+    "description2": "to say hello? Go ahead.",
+    "email": "almilasucode@gmail.com"
+  },
+
+  "socialMedia": [
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com",
+      "icon": "/assets/contact/twitter.png",
+      "alt": "twitter-icon"
+    },
+    {
+      "name": "Codepen",
+      "url": "https://codepen.io",
+      "icon": "/assets/contact/codepen.png",
+      "alt": "codepen-icon"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://instagram.com",
+      "icon": "/assets/contact/instagram.png",
+      "alt": "instagram-icon"
+    },
+    {
+      "name": "Hotmail",
+      "url": "https://hotmail.com",
+      "icon": "/assets/contact/email.png",
+      "alt": "email-icon"
+    }
+  ],
+
+  "projects": {
+    "title": "Projects",
+    "items": [
+      {
+        "id": 1,
+        "title": "Workintech",
+        "description": "A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible.",
+        "image": "/assets/projeler/proje1.png",
+        "tech": ["React", "Redux", "Vercel"],
+        "link": "https://www.workintech.com.tr/",
+        "github": "https://github.com/yourname/weather-app"
+      },
+      {
+        "id": 2,
+        "title": "Journey",
+        "description": "A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible.",
+        "image": "/assets/projeler/proje2.png",
+        "tech": ["React", "Redux", "Vercel"],
+        "link": "https://www.workintech.com.tr/",
+        "github": "https://github.com"
+      }
+    ]
+  }
+}

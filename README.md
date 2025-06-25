@@ -39,12 +39,12 @@ Not\* Bu dökümanın en sonunda da, sunumda seni değerlendireceğimiz başlık
 #### Önemli Notlar!
 
 - Dil yönetiminde i18n gibi bir paket kullanmanızı ASLA istemiyoruz. useContext veya Redux kullanarak, veri yönetimi, ve görüntüleme katmanının izole olduğu bir proje yapabildiğinizi görmek istiyoruz.
--  Tasarımı birebir uygulamalısın.
-  - Resimleri ve projeleri kendi projelerinle güncelleyebilirsin. Yine de kesinlikle **renkler ve yerleşimde** değişiklik istemiyoruz.
-  - Sunumdan sonra dilersen sonrasında kendi portföyün için özelleştirebilirsin.
+- Tasarımı birebir uygulamalısın.
+- Resimleri ve projeleri kendi projelerinle güncelleyebilirsin. Yine de kesinlikle **renkler ve yerleşimde** değişiklik istemiyoruz.
+- Sunumdan sonra dilersen sonrasında kendi portföyün için özelleştirebilirsin.
 - Axios ile *https://reqres.in/api/workintech* (yereldeki data.js, POST) veya başka bir sahte API servisi ile dış kaynakla iletişim kurabildiğini gösterebilmelisin. Dış servis ile iletişim kurmayı projenin en sonuna atın. Önceliği en düşük kısımlardan biri bu. Daha detaylı dış servis kurmayı ileride öğreneceksiniz.
 
-https://mockapi.io veya benzeri bir servisle, projeniz bitmeden önce zaman kaybedip, asıl yapmanız gerekenleri öncelik sırasına göre yapmayıp, talimat dışına çıkarsanız düşük not alabilirsiniz. Data için reqres.in dışında bir servis kullanmaya zaman harcayanlar genelde yetiştiremiyor. Sunumdan sonra ayrıca isterseniz bakabilirsiniz. 
+https://mockapi.io veya benzeri bir servisle, projeniz bitmeden önce zaman kaybedip, asıl yapmanız gerekenleri öncelik sırasına göre yapmayıp, talimat dışına çıkarsanız düşük not alabilirsiniz. Data için reqres.in dışında bir servis kullanmaya zaman harcayanlar genelde yetiştiremiyor. Sunumdan sonra ayrıca isterseniz bakabilirsiniz.
 
 > Böylece backende geçince de yönetim paneli yazıp, hem kod kalitesi hem yapabildiğiniz her şeyi tek projede birleştirmiş olacaksınız.
 
