@@ -1,10 +1,12 @@
 import data from "../data/data.json";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Profile() {
-  const profile = data.profile;
+  const { language } = useLanguage();
+  const profile = data[language].profile;
 
   return (
-    <section className="bg-primary text-white py-20 px-6">
+    <section className="bg-primary text-white py-20 px-6 dark:bg-[#171043]">
       <div className="max-w-[1000px] mx-auto">
         <h2 className="text-6xl font-bold text-secondary mb-12 text-start">
           {profile.title}
@@ -18,23 +20,28 @@ export default function Profile() {
             <div className="space-y-6 text-xl">
               <p>
                 <span className="font-semibold text-secondary">
-                  Date of Birth:{" "}
+                  {language === "en" ? "Date of Birth: " : "Doğum Tarihi: "}
                 </span>
                 {profile.birthDate}
               </p>
               <p>
-                <span className="font-semibold text-secondary">City: </span>
+                <span className="font-semibold text-secondary">
+                  {" "}
+                  {language === "en" ? "City: " : "Şehir: "}
+                </span>
                 {profile.city}
               </p>
               <p>
                 <span className="font-semibold text-secondary">
-                  Education Status:{" "}
+                  {language === "en" ? "Education Status: " : "Eğitim Durumu: "}
                 </span>
                 {profile.education}
               </p>
               <p>
                 <span className="font-semibold text-secondary">
-                  Preferred Role:{" "}
+                  {language === "en"
+                    ? "Preferred Role: "
+                    : "Tercih Edilen Rol: "}
                 </span>
                 {profile.preferredRole}
               </p>

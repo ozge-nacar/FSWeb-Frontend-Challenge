@@ -14,6 +14,7 @@ export default {
         bgDark: "#252128",
         customgray: "#777777",
       },
+
       fontFamily: {
         inter: ["Inter", "Sans-serif"],
       },
