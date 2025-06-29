@@ -10,7 +10,7 @@ function Header() {
 
   return (
     <>
-      {/* 🖥️ Masaüstü görünüm */}
+      {/*Masaüstü görünüm */}
       <header className="hidden lg:flex h-[600px] w-full font-sans relative overflow-hidden">
         <div className="flex-1 bg-primary text-secondary px-6 py-20 flex flex-col justify-between dark:bg-[#171043]">
           <div className="flex justify-between items-start">
@@ -94,7 +94,7 @@ function Header() {
         </div>
       </header>
 
-      {/* 📱 Mobil görünüm */}
+      {/*Mobil görünüm */}
       <header className="block lg:hidden w-full font-sans bg-primary text-secondary px-6 py-10 dark:bg-[#171043]">
         <div className="flex flex-col items-center text-center">
           <div className="flex justify-between w-full items-center mb-4">
