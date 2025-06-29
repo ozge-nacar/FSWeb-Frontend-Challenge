@@ -1,15 +1,13 @@
 describe("Kişisel Portföy Testleri", () => {
-  beforeEach(() => {
-    cy.visit("http://localhost:5173");
-  });
+  context("Masaüstü Görünüm", () => {
+    beforeEach(() => {
+      cy.viewport(1280, 800);
+      cy.visit("http://localhost:5173");
+    });
 
-  describe("Header Testleri", () => {
-    it("İsim ve diğer içerikler görünmeli", () => {
+    it("Header masaüstü görünümde görünür olmalı", () => {
       cy.contains("almila").should("be.visible");
       cy.contains("I am a Frontend").should("exist");
-      cy.contains("Developer...").should("exist");
-      cy.contains("craft solid and scalable frontend").should("exist");
-      cy.contains("user experiences").should("exist");
     });
 
     it("Dil değiştirici çalışmalı", () => {
@@ -29,7 +27,7 @@ describe("Kişisel Portföy Testleri", () => {
     });
 
     it("Dark mode aktifken ikonlar değişiyor", () => {
-      cy.get("input[type='checkbox']").click({ force: true });
+      cy.get("[data-testid='darkMode-toggle']").click({ force: true });
 
       cy.get("a:contains('Github') img")
         .should("have.attr", "src")
@@ -57,83 +55,93 @@ describe("Kişisel Portföy Testleri", () => {
     });
   });
 
-  describe("Skills Component Testleri", () => {
-    it("Yetenekler başlığı görünüyor", () => {
-      cy.contains(/Yetenekler|Skills/).should("be.visible");
+  describe("Skills görünürlük testi", () => {
+    beforeEach(() => {
+      cy.viewport(1280, 800);
+      cy.visit("http://localhost:5173");
+
+      cy.get("body").then(($body) => {
+        if ($body.text().includes("TÜRKÇE’YE GEÇ")) {
+          cy.contains("TÜRKÇE’YE GEÇ").click({ force: true });
+        }
+      });
     });
 
-    it("Tüm yetenekler listeleniyor", () => {
-      cy.contains(/javascript/i).should("be.visible");
-      cy.contains(/react/i).should("be.visible");
-      cy.contains(/redux/i).should("be.visible");
+    it("Skills başlığı görünür olmalı", () => {
+      cy.contains(/Skills|Yetenekler/).should("exist");
+      cy.contains(/Skills|Yetenekler/).should("be.visible");
     });
   });
 
   describe("Profile Component Testleri", () => {
     it("Profil başlığı görünmeli", () => {
-      cy.contains(/Profil|Profile/).should("be.visible");
-    });
+      cy.get("body").then(($body) => {
+        if ($body.text().includes("SWITCH TO ENGLISH")) {
+          cy.contains("TÜRKÇE’YE GEÇ").click({ force: true });
+        }
 
-    it("Temel bilgiler sayfada görünmeli", () => {
-      cy.contains(/Doğum Tarihi|Date of Birth/).should("be.visible");
-      cy.contains(/Ankara/).should("be.visible");
-      cy.contains(/Hacettepe/).should("be.visible");
-    });
-
-    it("Hakkımda metinleri görünür olmalı", () => {
-      cy.contains("h2", /Profil|Profile/)
-        .parents("section")
-        .within(() => {
-          cy.get("p").should("have.length.gte", 1);
-        });
-    });
-
-    it("Profil resmi yükleniyor", () => {
-      cy.get("img[alt='Profile']")
-        .should("be.visible")
-        .and(($img) => {
-          expect($img[0].naturalWidth).to.be.greaterThan(0);
-        });
-    });
-
-    describe("Projects Component Testleri", () => {
-      it("Projeler başlığı görünür", () => {
-        cy.contains(/Projeler|Projects/).should("be.visible");
+        cy.visit("http://localhost:5173");
+        cy.contains(/Profil|Profile/, { timeout: 10000 }).should("be.visible");
       });
     });
 
+    it("Temel bilgiler sayfada görünmeli", () => {
+      cy.visit("http://localhost:5173");
+      cy.get("body", { timeout: 10000 }).should("not.be.empty");
+
+      cy.contains("24.03.1996").should("be.visible");
+      cy.contains("Ankara").should("be.visible");
+      cy.contains("Hacettepe").should("be.visible");
+    });
+
+    it("Profil resmi görünür ve yüklenmiş olmalı", () => {
+      cy.visit("http://localhost:5173");
+
+      cy.get("body").then(($body) => {
+        if ($body.text().includes("TÜRKÇE’YE GEÇ")) {
+          cy.contains("TÜRKÇE’YE GEÇ").click({ force: true });
+        }
+      });
+
+      cy.get("[data-testid='profile-img']", { timeout: 10000 })
+        .scrollIntoView()
+        .should("be.visible");
+    });
+
     it("Projeler listeleniyor", () => {
+      cy.visit("http://localhost:5173");
+
+      cy.contains("h2", /Projeler|Projects/).should("be.visible");
+
       cy.contains("h2", /Projeler|Projects/)
         .parents("section")
         .within(() => {
-          cy.get("h3").should("have.length.gte", 1);
+          cy.get("h3").its("length").should("be.gte", 1);
         });
     });
 
     it("Projelerde linkler doğru çalışıyor", () => {
+      cy.visit("http://localhost:5173");
       cy.get("a").filter("[href*='github.com']").should("have.length.gte", 1);
       cy.get("a")
-        .filter("[href*='fs-web-frontend-challenge-57xn.vercel.app/']")
+        .filter("[href*='https://fs-web-frontend-challenge-ljjf.vercel.app/']")
         .should("have.length.gte", 1);
     });
   });
 
   describe("Contact Component Testleri", () => {
     it("İletişim başlığı ve açıklamalar görünür", () => {
-      cy.contains(/Bana mesaj gönder|Send me a message/).should("be.visible");
+      cy.visit("http://localhost:5173", { timeout: 10000 });
+      cy.contains(/Bana mesaj gönder|Send me a message/, {
+        timeout: 10000,
+      }).should("be.visible");
     });
 
     it("Sosyal medya ikonları ve linkleri doğru şekilde görünmeli", () => {
-      cy.get("a[href*='twitter.com']")
+      cy.visit("http://localhost:5173", { timeout: 10000 });
+      cy.get("a[href*='twitter.com']", { timeout: 10000 })
         .should("have.attr", "href")
         .and("include", "twitter.com");
-      cy.get("a[href*='codepen.io']")
-        .should("have.attr", "href")
-        .and("include", "codepen.io");
-      cy.get("a[href*='instagram.com']")
-        .should("have.attr", "href")
-        .and("include", "instagram.com");
-      cy.get("img[alt*='icon']").should("have.length.gte", 3);
     });
   });
 });

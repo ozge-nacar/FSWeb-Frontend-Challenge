@@ -51,6 +51,7 @@ export default function Profile() {
             <img
               src={profile.image}
               alt="Profile"
+              data-testid="profile-img"
               className="w-[220px] h-[220px] sm:w-[250px] sm:h-[250px] object-cover rounded-xl shadow-lg"
             />
           </div>
